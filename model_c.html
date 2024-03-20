@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TATA NEXON EV Details</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles specific to the slider */
+    .slider {
+      max-width: 100%;
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      z-index: 1;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Model D Details</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">View Models</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="model-details">
+    <h2>TATA NEXON </h2>
+    <!-- Image slider HTML -->
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="https://i0.wp.com/www.smartprix.com/bytes/wp-content/uploads/2022/05/nexon-ev-max-1.png?ssl=1&quality=80&w=800" alt="Electric Car 1">
+        </div>
+        <div class="slide">
+          <img src="https://english.cdn.zeenews.com/sites/default/files/2022/05/11/1041322-tata-nexon-ev-max-8.jpg" alt="Electric Car 1">
+        </div>
+        <div class="slide">
+          <img src="https://cdn.zeebiz.com/hindi/sites/default/files/2019/12/19/20850-nexon.jpg" alt="Electric Car 1">
+        </div>
+      </div>
+      <div class="arrow prev" onclick="prevSlide()">❮</div>
+      <div class="arrow next" onclick="nextSlide()">❯</div>
+    </div>
+
+    <p>Detailed description of TATA NEXON goes here.</p>
+    <p> 
+        <li> Price: The Tata Nexon EV is priced between Rs 14.74 lakh and Rs 19.94 lakh (introductory ex-showroom Delhi).</li>
+
+        <li> Variants: The electric version of the Nexon facelift can be had in 3 broad variants: Creative, Fearless, and Empowered.</li>
+
+        <li>Colours: Tata offers the Nexon EV in 7 colour options: Flame Red, Pristine White, Intensi Teal, Empowered Oxide,
+             Fearless Purple, Creative Ocean, and Daytona Grey.</li>
+
+        <li>Seating Capacity: It is a 5-seater electric subcompact SUV.</li>
+
+        <li>Battery, Electric Motor & Range: The Nexon EV gets 2 battery pack options:
+             a 30 kWh battery pack paired with an electric motor which makes 129 PS/215 Nm, 
+             and gives a claimed range up to 325 km, and the other employs a larger 40.5kWh 
+             pack mated to an electric motor that churns out 144 PS/215 Nm, and delivers a claimed
+              range of up to 465 km. </li>
+
+        <li>Charging: The Nexon EV supports multiple charging options, which are detailed below:
+
+            7.2 kW AC Home Charger (10-100 %): 4.3 hours (Medium Range), 6 hours (Long Range)
+
+            AC Home Wallbox  (10-100 %): 10.5 hours (Medium Range), 15 hours (Long Range)
+
+            DC Fast Charger (10-100 %): 56 minutes for both
+
+            15 A Portable Charger (10-100 %): 10.5 hours (Medium Range), 15 hours (Long Range)</li>
+
+        <li>Features: Features on board the Nexon EV include a 12.3-inch touchscreen infotainment
+             with wireless Android Auto and Apple CarPlay, a 10.25-inch fully digital driver’s 
+             display, a 9-speaker JBL sound system, automatic AC, cruise control, ventilated front seats, 
+             wireless phone charging, and a single-pane sunroof. It also comes with vehicle-to-vehicle
+              (V2V) and vehicle-to-load (V2L) functionalities.</li>
+
+        <li>Safety: On the safety front, it gets 6 airbags as standard, ABS with EBD, electronic stability
+             control (ESC), a 360-degree camera, a blind view monitoring system, and front and rear parking sensors.</li>
+    </p>
+    <a href="models.html" class="back-btn">Back to Models</a>
+  </section>
+
+  
+
+  <footer>
+    <p>&copy; 2023 Electric Vehicles</p>
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+
+    function showSlides(n) {
+      let slides = document.querySelectorAll('.slide');
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+      }
+      slides[slideIndex - 1].style.display = 'block';
+    }
+
+    function prevSlide() {
+      showSlides(slideIndex -= 1);
+    }
+
+    function nextSlide() {
+      showSlides(slideIndex += 1);
+    }
+
+    showSlides(slideIndex);
+  </script>
+</body>
+</html>

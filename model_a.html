@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Model A Details</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles specific to the slider */
+    .slider {
+      max-width: 100%;
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      z-index: 1;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TATA TIAGO EV Details</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">View Models</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="model-details">
+    <h2>TATA TIAGO</h2>
+    <!-- Image slider HTML -->
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="https://www.tatamotors.com/wp-content/uploads/2023/11/Tiago-EV-Front-scaled.jpg" alt="Electric Car 1">
+        </div>
+        <div class="slide">
+          <img src="https://www.tatamotors.com/wp-content/uploads/2023/11/Tiago-EV-Rear-scaled.jpg" alt="Electric Car 1">
+        </div>
+        <div class="slide">
+          <img src="https://www.tatamotors.com/wp-content/uploads/2023/11/Tiago-EV-Side-2.jpg" alt="Electric Car 1">
+        </div>
+      </div>
+      <div class="arrow prev" onclick="prevSlide()">❮</div>
+      <div class="arrow next" onclick="nextSlide()">❯</div>
+    </div>
+
+    <p>Detailed description of TATA TIAGO goes here.</p>
+    <p> 
+        Price :
+
+        <li > Tata Tiago EV price ranges between Rs. 8.69 Lakh - Rs. 12.04 Lakh depending on the variant
+           selected.</li>
+        <li> Variants : The Tata Tiago EV is available in four variant options: XE, XT, XZ+, 
+           and XZ+ Tech Lux. </li>
+        <li>Colours: You can buy the electric hatchback in 5 exterior shades: 
+           Signature Teal Blue, Daytona Grey, Tropical Mist, Pristine White and Midnight Plum.</li>
+        <li>Battery Pack and Range: The Tiago EV can be had with 2 battery pack options: 19.2 kWh
+            and 24 kWh. Both battery packs are mated to an electric motor that churns out 61 PS/110
+         Nm for the smaller battery and 75 PS/114 Nm for the bigger one. With these battery packs, the 
+         electric hatchback offers a claimed range from 250 km to 315 km.</li>
+    </p>
+    <a href="models.html" class="back-btn">Back to Models</a>
+  </section>
+
+  
+
+  <footer>
+    <p>&copy; 2023 Electric Vehicles</p>
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+
+    function showSlides(n) {
+      let slides = document.querySelectorAll('.slide');
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+      }
+      slides[slideIndex - 1].style.display = 'block';
+    }
+
+    function prevSlide() {
+      showSlides(slideIndex -= 1);
+    }
+
+    function nextSlide() {
+      showSlides(slideIndex += 1);
+    }
+
+    showSlides(slideIndex);
+  </script>
+</body>
+</html>

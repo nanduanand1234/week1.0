@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KIA EV 6 Details</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles specific to the slider */
+    .slider {
+      max-width: 100%;
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      z-index: 1;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Model D Details</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">View Models</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="model-details">
+    <h2>KIA EV 6 </h2>
+    <!-- Image slider HTML -->
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="https://www.kia.com/content/dam/kia2/in/en/our-vehicles/showroom/ev6/showroom/slider/slider-ev1.jpg" alt="Electric Car 1">
+        </div>
+        <div class="slide">
+          <img src="https://www.kia.com/content/dam/kia2/in/en/our-vehicles/showroom/ev6/showroom/slider/slider-ev2.jpg" alt="Electric Car 1">
+        </div>
+        <div class="slide">
+          <img src="https://www.kia.com/content/dam/kia2/in/en/our-vehicles/showroom/ev6/third-slider-ev6-pc.png" alt="Electric Car 1">
+        </div>
+      </div>
+      <div class="arrow prev" onclick="prevSlide()">❮</div>
+      <div class="arrow next" onclick="nextSlide()">❯</div>
+    </div>
+
+    <p>Detailed description of KIA EV 6 goes here.</p>
+    <p> 
+        <li>Price: Kia has priced the EV6 from Rs 60.95 lakh to Rs 65.95 lakh (ex-showroom pan India).</li>
+
+        <li>Variants: The electric SUV comes in a single top-of-the-line GT trim. There are 2 variants
+             to choose from: GT Line RWD and GT Line AWD.</li>
+
+        <li>Seating Capacity: It is offered in a 5-seater configuration.</li>
+
+        <li>Battery Pack, Electric Motor and Range: The India-spec Kia EV6  gets 
+            a 77.4 kWh battery pack and the following powertrain choices: a single 
+            motor rear-wheel drive (229 PS/350 Nm), and a dual motor all-wheel drive (325 PS/605 Nm) 
+            setup. The EV6 has an ARAI-claimed range of up to 708 km.</li>
+
+        <li>Charging: Its battery can be rejuvenated from 10 to 80 percent in 18 minutes
+             using a 350 kW DC fast charger. It takes 73 minutes to juice it up from 10 to 80
+              percent using a 50 kW DC fast charger while a home charger does the same task in 36 hours.</li>
+
+        <li>>Features: The EV6 boasts amenities like curved 12.3-inch displays for the instrument cluster and
+             touchscreen infotainment system, a 14-speaker Meridian sound system, wireless phone charging,
+              dual-zone climate control, ventilated and powered front seats, and a single-pane sunroof.</li>
+
+        <li>Safety: It gets 8 airbags, electronic stability control (ESC) and advanced driver-assistance systems
+             (ADAS) like automatic emergency braking, adaptive cruise control, lane-keep assist and blind spot monitoring.</li>
+    </p>
+    <a href="models.html" class="back-btn">Back to Models</a>
+  </section>
+
+  
+
+  <footer>
+    <p>&copy; 2023 Electric Vehicles</p>
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+
+    function showSlides(n) {
+      let slides = document.querySelectorAll('.slide');
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+      }
+      slides[slideIndex - 1].style.display = 'block';
+    }
+
+    function prevSlide() {
+      showSlides(slideIndex -= 1);
+    }
+
+    function nextSlide() {
+      showSlides(slideIndex += 1);
+    }
+
+    showSlides(slideIndex);
+  </script>
+</body>
+</html>
